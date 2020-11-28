@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="col-md-12 mt-4">
+        <h4 class="card-title">Drop List
+            <a routerLink="/addhomedrop" class="btn btn-primary btn-sm float-right" routerLinkActive="active">Create Drop</a>
+        </h4>
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <td>Country</td>
+                        <td>State</td>
+                        <td>District</td>
+                        <td>Actions</td>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <tr *ngFor="let drops of drop">
+                        <td>{{ drops.country_name }}</td>
+                        <td>{{ drops.state_name }}</td>
+                        <td>{{ drops.district_name }}</td>
+                        <td>
+                            <a (click)="deletedrop(drop._id)" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

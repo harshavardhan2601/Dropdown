@@ -1,0 +1,44 @@
+<form [formGroup]="selectFrom">
+    <div class="col-md-12 mt-5">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Select Country</label>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <select class="form-control" formControlName="country_name" (change)="onChangeCountry($event.target.value)">
+                    <option value="" selected="selected">--Select Country--</option>
+                    <option [value]="country">{{country}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Select State</label>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <select class="form-control" formControlName="state_name" (change)="onChangeState($event.target.value)">
+                    <option value="" selected="selected">--Select State--</option>
+                    <option *ngFor="let states of state ; let i = index" [value]="states">{{states}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Select District</label>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <select class="form-control" formControlName="district_name">
+                    <option value="" selected="selected">--Select District--</option>
+                    <option *ngFor="let districts of district ; let i = index" [value]="districts">{{districts}}
+                    </option>
+                </select>
+            </div>
+        </div>
+    </div>
+</form>
